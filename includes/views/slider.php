@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: Alexander
@@ -13,8 +13,7 @@
     $newsForSlider = clone $homeControllerObj;
     $news = $newsForSlider->newsForSlider();
     $last_news = count($news)-1;
-//    echo '<pre>';
-//    var_dump($news);
+
 
 ?>
 
