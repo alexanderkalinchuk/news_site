@@ -7,13 +7,12 @@
  */
 
 //Создаю клон который будет содержать переменную с новостями. Вычисляю длину массива, чтобы работать с последними
-//добавленными в БД новостями. Беру последние 3 новости
+//добавленными в БД новостями. Беру последние 3 новости.
 
     $homeControllerObj = new HomeController();
     $newsForSlider = clone $homeControllerObj;
     $news = $newsForSlider->newsForSlider();
     $last_news = count($news)-1;
-
 
 ?>
 
