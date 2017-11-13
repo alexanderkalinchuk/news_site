@@ -6,7 +6,7 @@
  * Time: 17:58
  */
 class NewsPage {
-
+// Вытягивает из БД запрашиваемую новость
     public static function OneNewsPage($news_page = array()){
         global $db;
 

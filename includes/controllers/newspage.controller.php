@@ -11,13 +11,10 @@
 class NewsPageController{
     public static function handleRequest(){
         $newspage = NewsPage::OneNewsPage();
-//        $tags = Tags::findTags();
-      //  $tags = Tags::tagsDivider();
 
         render('newsOnePage', array(
             'title' => 'this news',
              'newspage' => $newspage,
-           //  'tags' => $tags
             )
         );
     }

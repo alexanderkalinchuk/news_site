@@ -15,8 +15,8 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="http://127.0.0.1/diploma/js/register-form.js"></script>
-    <link rel="stylesheet" href="http://127.0.0.1/diploma/style/auth.css">
+    <script src="http://alexk.in.ua/js/register-form.js"></script>
+    <link rel="stylesheet" href="http://alexk.in.ua/style/auth.css">
 
 </head>
 
@@ -88,4 +88,3 @@
         </div>
     </div>
 </div>
-

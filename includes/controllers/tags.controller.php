@@ -9,7 +9,6 @@
 class TagsController {
     public function handleRequest(){
 
-
         $news = News::findNewsHeader(array('tag'=>$_GET['tag']));
   
         render('category',array(

@@ -22,14 +22,12 @@ class AdminPanel {
             $st = $db->prepare("SELECT * FROM categories");
 
         } else {
-            throw new Exception("Unsupported property!");
+            throw new Exception("ошибка в adm pan");
         }
 
         $st->execute($arr);
 
-        // Returns an array of Category objects:
         return ($st->fetchAll(PDO::FETCH_CLASS, "Category"));
     }
 
 }
-

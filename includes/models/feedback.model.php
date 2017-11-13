@@ -10,10 +10,6 @@
 
 class Feedback {
 
-    /*
-        метод find вытягивает из таблицы категории новостей и возвращает массив в $content в home.controller
-    */
-
     public static function feedb()
     {
         global $db;
@@ -26,10 +22,6 @@ class Feedback {
             echo '<p id="feedback_message">Ваше сообщение отправлено, спасибо! В ближайшее время с Вами свяжется наш оператор!</p>';
 
         }
-
-
-
-        // Returns an array of Category objects:
 
     }
 

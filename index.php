@@ -1,12 +1,7 @@
 <?php
 
-/*
-	This is the index file of our simple website.
-	It routes requets to the appropriate controllers
-*/
-
 require_once "includes/main.php";
-require_once 'includes\auth\session.class.php';
+require_once 'includes/auth/session.class.php';
 session_start();
 
 try {
@@ -39,7 +34,7 @@ try {
 
 }
 catch(Exception $e) {
-	// Display the error page using the "render()" helper function:
+	// сообщение об ошибке
 	render('error',array('message'=>$e->getMessage()));
 }
 

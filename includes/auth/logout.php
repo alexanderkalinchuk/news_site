@@ -4,4 +4,4 @@ require_once 'session.class.php';
 
 Session::destroy();
 
-header('location: http://localhost/diploma/');
+header('location: alexk.in.ua');

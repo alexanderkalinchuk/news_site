@@ -1,3 +1,5 @@
+<!--ОТображение обратной связи-->
+
 <?php render('_header',array('title'=>$title))?>
 
 <hr>
