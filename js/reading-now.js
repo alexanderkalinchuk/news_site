@@ -1,3 +1,5 @@
+// счетчик для Читают сейчас, Всего прочитали эту новость
+
 function ReadTotalNow(){
 	var reading = 0;
 	var total = 0;
@@ -15,6 +17,3 @@ function ReadTotalNow(){
 
 
 ReadTotalNow();
-
-
-

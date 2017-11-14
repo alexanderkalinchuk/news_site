@@ -1,3 +1,5 @@
+<!--Футер-->
+
         </div>
 
         <div data-role="footer" id="pageFooter">

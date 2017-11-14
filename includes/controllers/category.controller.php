@@ -6,23 +6,18 @@
  * Time: 14:15
  */
 
+//Использует метод для поиска заголовков новостей и отправляет их на отображение в render
 class CategoryController{
     public function handleRequest(){
 
         $cat = News::findNewsHeader(array('news_category'=>$_GET['category']));
 
         if(empty($cat)){
-            throw new Exception("There is no such category!");
+            throw new Exception("Нет такой категории");
         }
 
-        // Fetch all the categories:
         $categories = News::findNewsHeader();
-
-        // Fetch all the products in this category:
         $news = News::findNewsHeader(array('news_category'=>$_GET['category']));
-//        echo '<pre>';
-//        var_dump($news);
-        // $categories and $products are both arrays with objects
 
         render('category',array(
             'title'			=> $cat[0]->name,

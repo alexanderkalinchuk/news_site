@@ -3,7 +3,7 @@
 class Category {
 
     /*
-        метод find вытягивает из таблицы категории новостей и возвращает массив в $content в home.controller
+        find вытягивает из таблицы категории новостей и возвращает массив в $content в home.controller
     */
 
     public static function find($arr = array())
@@ -21,7 +21,6 @@ class Category {
 
         $st->execute($arr);
 
-        // Returns an array of Category objects:
         return ($st->fetchAll(PDO::FETCH_CLASS, "Category"));
     }
 
@@ -75,8 +74,24 @@ class News {
 
 	    return $news->fetchAll(PDO::FETCH_CLASS, "News");
     }
-}
 
+    //функция возвращает последние 3 добавленные в БД заголовка новости
+    public static function findLastNewsHeader($news_array = array()){
+        global $db;
+
+
+        $query = "SELECT * FROM news ORDER BY id DESC LIMIT 3";
+
+        $news = $db->prepare($query);
+
+
+        $news->execute($news_array);
+
+        return $news->fetchAll(PDO::FETCH_CLASS, "News");
+    }
+
+
+}
 
 
 ?>

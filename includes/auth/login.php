@@ -7,10 +7,10 @@ require_once 'password.class.php';
 require_once 'session.class.php';
 
 
-$db_host = 'localhost';
-$db_user = 'root';
-$db_password = '';
-$db_name = 'users';
+$db_host = '91.231.86.213';
+$db_user = 'alexk91_admin';
+$db_password = 'F7U?adlcIVrx';
+$db_name = 'alexk91_newssite_users';
 
 $msg = '';
 
@@ -29,7 +29,7 @@ if ($_POST) {
         } else {
             $user = $res[0]['username'];
             Session::set('user', $user);
-            header('location: http://localhost/diploma/');
+            header('location: alexk.in.ua');
         }
 
     } else {

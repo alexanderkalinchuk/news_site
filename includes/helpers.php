@@ -1,4 +1,5 @@
 <?php
+//функция для реализации подключения отдельных блоков в view.
 
 function render($template,$vars = array()){
 
@@ -13,28 +14,30 @@ function render($template,$vars = array()){
 			$$cl = $k;
 			include "views/_$cl.php";
 		}
-		
+
 	}
 	else {
 		include "views/$template.php";
 	}
 }
-	
+
 	function formatTitle($title = ''){
 		if($title){
 			$title.= ' | ';
 		}
-		
+
 		$title .= $GLOBALS['defaultTitle'];
-		
+
 		return $title;
 	}
 
+
+// получает строку с тэгами, разбивает их и отдает внутри <a>..</a>
 	function tagsDivider($newspage = array()){
 	    $kom = ", ";
 	    $tags = $newspage->tags;
         $tags = explode(", ", $tags);
-//var_dump($tags );
+
         for($i=0; $i<count($tags); $i++){
             if ($i !== count($tags)-1){
                 echo "<a href='?tag=$tags[$i]'>" . $tags[$i] . "</a>" . "$kom";

@@ -1,5 +1,7 @@
-﻿<?php render('_header',array('title'=>$title))?>
+﻿<!--Отображение главной страницы-->
 
+<?php render('_header',array('title'=>$title))?>
+<?php render('slider')?>
 
 
 <ul class="news-list" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">

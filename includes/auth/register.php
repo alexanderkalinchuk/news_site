@@ -4,10 +4,10 @@ require_once('forms/registration.form.class.php');
 require_once('db.class.php');
 require_once('password.class.php');
 
-$db_host = 'localhost';
-$db_user = 'root';
-$db_password = '';
-$db_name = 'users';
+$db_host = '91.231.86.213';
+$db_user = 'alexk91_admin';
+$db_password = 'F7U?adlcIVrx';
+$db_name = 'alexk91_newssite_users';
 
 $msg = '';
 
@@ -25,7 +25,7 @@ if ($_POST) {
             $msg = 'Пользователь с таким именем уже существует';
         } else {
             $db->query("INSERT INTO users (email, username, password) VALUES ('{$email}','{$username}','{$password}')");
-            header('location: http://localhost/diploma/');
+            header('location: http://alexk.in.ua');
         }
 
     } else {
@@ -35,4 +35,3 @@ if ($_POST) {
 
 
 ?>
-
