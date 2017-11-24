@@ -1,10 +1,10 @@
-
+﻿
 <?php render('_header',array('title'=>$title))?>
 
 <!--JS для Читают\Просматривают сейчас-->
-<script src="http://alexk.in.ua/newssite/js/reading-now.js"></script>
+<script src="http://alexk.in.ua/js/reading-now.js"></script>
 
-    <p>Здесь отображается одна новость</p>
+<!--JS для Читают\Просматривают сейчас-->
 
     <ul class="news-list">
 

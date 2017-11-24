@@ -8,6 +8,32 @@
   padding: 0;
 }
 
+/* Стили для формы всплывающего окна подписки*/
+  #subscribe-window{
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    display: none;
+    background: #D0E37F;
+    z-index: 200;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+  }
+  
+  .close{
+    margin-left: 364px;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+
+  #subscribe-form{
+    padding-top: 60px;
+  }
+
 /* Стили для формы Обратной связи*/
 
     #feedback-form {

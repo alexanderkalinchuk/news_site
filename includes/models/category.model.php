@@ -57,8 +57,19 @@ class News {
             $news = $db->prepare($full_query);
 
         } else if ($news_array['news_category']){
+                //здесь новости отображаются по 5 штук для пагинации. Учитывается номер страницы при переключение пагинации.
+            if (!$_GET['page']){
+                $coefficientForNewsPage = 0;
+            }else{
+                $coefficientForNewsPage = ($_GET['page']-1) * 5; //этот коэффициент нужен для LIMIT (с какой начинать, сколько)
+            }
+            $query = "(SELECT * FROM news WHERE news_category=:news_category LIMIT " . $coefficientForNewsPage . ",5 )";
+            $news = $db->prepare($query);
 
-            $news = $db->prepare("SELECT * FROM news WHERE news_category=:news_category");
+        } else if ($news_array['news_count']){
+                //здесь отдается количество новостей определенной категории для расчетов в пагинации
+            $query = "(SELECT * FROM news WHERE news_category=:news_count)";
+            $news = $db->prepare($query);
 
         } else if ($news_array['tag']){
             $tagquery = $news_array['tag'];
@@ -66,7 +77,7 @@ class News {
 
         }
 	    else {
-	        throw new Exception("Что-то не то");
+	        throw new Exception("Что-то не то в category.model");
 
         }
 

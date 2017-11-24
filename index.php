@@ -6,7 +6,7 @@ session_start();
 
 try {
 
-	if($_GET['category']){
+	if($_GET['category'] || $_GET['page']){
 		$c = new CategoryController();
 	}
 	else if(empty($_GET)){
