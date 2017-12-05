@@ -8,7 +8,7 @@
 
 class AdminController{
     public static function handleRequest(){
-        $adminmenu = AdminPanel::Panel();
+        $adminmenu = AdminCategoryEdit::Panel();
 
         render('adminpanel', array(
                 'title' => 'this is admin panel',

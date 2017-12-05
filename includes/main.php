@@ -1,9 +1,5 @@
 <?php
 
-/*
-	This is the main include file.
-	It is only used in index.php and keeps it much cleaner.
-*/
 
 require_once "includes/config.php";
 require_once "includes/connect.php";
@@ -21,8 +17,8 @@ require_once "includes/controllers/tags.controller.php";
 require_once "includes/controllers/adminpanel.controller.php";
 require_once "includes/controllers/categoryEdit.controller.php";
 
-
-// This will allow the browser to cache the pages of the store.
+//заполнитель БД (раскомментируй если надо заполнить БД)
+// require_once "auto-database-agregate/auto-db-agr.php";
 
 header('Cache-Control: max-age=3600, public');
 header('Pragma: cache');
