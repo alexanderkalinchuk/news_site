@@ -9,16 +9,34 @@
 class CategoryEditController{
     public function handleRequest(){
 
-        $category = AdminPanel::categoryEdit(array());
+        $categoryedit = AdminCategoryEdit::categoryEdit(array());
 
-        if(empty($category)){
-            throw new Exception("ошибка в CategoryEditController");
+        if(empty($categoryedit)){
+            throw new Exception("Error in CategoryEditController");
         }
 
-        render('categoryeditor',array(
+        render('admincategoryedit',array(
             'title'			=> 'CategoryEditor',
-            'categories'	=> categoryedit
+            'admincategoryedit'	=> $categoryedit
         ));
     }
 }
-?>
+
+class CategoryDelete {
+
+  public function handleRequest(){
+    $id = $_GET['delete'];
+    $categoryDelete = AdminCategoryEdit::categoryDelete($id);
+
+  }
+}
+
+class CategoryAdd {
+
+  public function handleRequest(){
+    $categoryName = $_POST['categoryName'];
+    $categoryAdd = AdminCategoryEdit::categoryAdd($categoryName);
+
+  }
+
+}

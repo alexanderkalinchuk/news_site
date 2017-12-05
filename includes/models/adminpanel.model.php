@@ -6,12 +6,11 @@
  * Time: 8:14
  */
 
-class AdminPanel {
+class AdminCategoryEdit {
 
-    public static function Panel($arr = array())
-    {
+  public static function Panel(){
 
-    }
+  }
 
     public static function categoryEdit($arr = array())
     {
@@ -22,12 +21,44 @@ class AdminPanel {
             $st = $db->prepare("SELECT * FROM categories");
 
         } else {
-            throw new Exception("ошибка в adm pan");
+            throw new Exception("Unsupported property!");
         }
 
         $st->execute($arr);
 
-        return ($st->fetchAll(PDO::FETCH_CLASS, "Category"));
+        return ($st->fetchAll(PDO::FETCH_CLASS, "AdminCategoryEdit"));
     }
 
+
+    public static function categoryDelete($id)
+    {
+      global $db;
+
+      if(!empty($id) and (Session::has('user') and Session::get('user') == 'admin')){
+        $st = $db->prepare("DELETE FROM categories WHERE id=$id");
+      } else {
+        throw new Exception("Error in categotyDelete");
+      }
+
+      if( $st->execute($arr) ) {
+        header('location: ./?categoryedit=1/');
+      }
+    }
+
+
+    public static function categoryAdd($categoryName)
+    {
+      global $db;
+
+      if(!empty($categoryName) and (Session::has('user') and Session::get('user') == 'admin')){
+        $st = $db->prepare("INSERT INTO categories (`id`, `name`) VALUES ('"."', '$categoryName')");
+      } else {
+        throw new Exception("Error in categotyAdd");
+      }
+        if( $st->execute($arr) ) {
+          header('location: ./?categoryedit=1/');
+        }
+
+
+    }
 }

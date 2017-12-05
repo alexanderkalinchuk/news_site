@@ -1,0 +1,1 @@
+sports;sports, football;finance, BTC;finance, euro;Ukraine, Kiev; Ukraine, sports;IT, JavaScript;IT, react;politics, Trump;politics
