@@ -38,5 +38,12 @@ class CategoryAdd {
     $categoryAdd = AdminCategoryEdit::categoryAdd($categoryName);
 
   }
-
 }
+
+  class NewsDelete {
+
+    public function handleRequest(){
+      $id = $_GET['delete-news'];
+      $newsDelete = AdminCategoryEdit::newsDelete($id);
+    }
+  }

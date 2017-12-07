@@ -9,7 +9,7 @@
 //Использует метод для поиска заголовков новостей и отправляет их на отображение в render
 class CategoryController{
     public function handleRequest(){
-        
+
         $cat = News::findNewsHeader(array('news_category'=>$_GET['category']));
 
         if(empty($cat)){

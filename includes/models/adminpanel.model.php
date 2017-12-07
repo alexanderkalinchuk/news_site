@@ -61,4 +61,26 @@ class AdminCategoryEdit {
 
 
     }
+
+    public static function newsDelete($id)
+    {
+      global $db;
+
+      if(!empty($id) and (Session::has('user') and Session::get('user') == 'admin')){
+        $st = $db->prepare("DELETE FROM news WHERE id=$id");
+      }else{
+        throw new Exception("Error in newsDelete");
+      }
+
+      if( $st->execute($arr) ) {
+
+      //здесь разбивается строка что вытащить часть ссылки страницы на которой мы находимя, и затем
+      // после нажатия Delete новость, юзера перенаправил хэдэр на эту же страницу
+        $url = $_SERVER["HTTP_REFERER"];
+        $relocateUrl = explode('?', $url);
+        $relocateUrl = $relocateUrl[1];
+
+        header("location: ./?$relocateUrl");
+      }
+    }
 }
